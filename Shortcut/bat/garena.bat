@@ -1,0 +1,1 @@
+cmd /C "D:\Garena\Garena\Garena.exe"

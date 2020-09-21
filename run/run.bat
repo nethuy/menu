@@ -1,0 +1,5 @@
+call "C:\Users\user\Desktop\Menu Game - Net Huy.lnk"
+call "D:\txgameassistant\Gameloop-Reg-Import.bat"
+call "D:\Garena\garena-config-copy-client.bat"
+Xcopy /I /E "I:\GTA5\Rockstar Games" "C:\Users\user\Documents\Rockstar Games"
+Xcopy /I /E "I:\Game Offline\Mafia III Definitive Edition\2K Games" "C:\Users\user\AppData\Local\2K Games"

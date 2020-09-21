@@ -1,0 +1,1 @@
+cmd /C "D:\Grand Theft Auto V\GTAVLauncher.exe"

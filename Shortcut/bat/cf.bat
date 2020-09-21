@@ -1,0 +1,1 @@
+cmd /C "D:\Dotkich\patcher_cf2.exe"

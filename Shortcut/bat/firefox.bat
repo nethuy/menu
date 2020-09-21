@@ -1,0 +1,1 @@
+cmd /C "D:\Soft\FirefoxPortable\FirefoxPortable.exe"

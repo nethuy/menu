@@ -1,0 +1,1 @@
+cmd /C "D:\Soft\CocCocPortable\CocCocPortable.exe"
