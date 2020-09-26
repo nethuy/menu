@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Menu Game - Net Huy</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <link rel="icon" href="image/favicon.ico" type="image/x-icon">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174451855-1"></script>
@@ -15,6 +16,28 @@
   gtag('config', 'UA-174451855-1');
 </script>
 <style>
+/* width */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #444; 
+}
+
 html {overflow:hidden;}
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -44,11 +67,18 @@ h2 {
 }
 
 .left {
-	float:left;
-	width: 20%;
-	height: 100%;
-	background: blueviolet;
-	text-align: center;
+    float: left;
+    width: 19.9%;
+    height: 100%;
+    background: #1c1c1c;
+    text-align: center;
+    border-right: 1px solid #777777;
+}
+
+.fa {
+    font-size: 20px !important;
+    padding-right: 8px;
+    width: 25px;
 }
 
 .right {
@@ -62,14 +92,16 @@ h2 {
     font-size: 24px;
     width: 100%;
     height: 10%;
-    background: yellow;
+    background: #2a2a2a;
     font-weight: bold;
+	color: #d3d3d3;
+	border-bottom: 1px solid #777777;
 }
 
 .content {
 	width: 100%;
 	height: 90%;
-	background: aquamarine;
+	background: #1c1c1c;
 }
 
 /* @media (max-width: 600px) {
@@ -113,11 +145,11 @@ html {
     margin: 0px;
 }
 .btn-group .button {
-  background-color: #4CAF50; /* Green */
-  border: 1px solid green;
+  background-color: unset;
+  border: unset;
   color: white;
   padding: 15px 32px;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   font-size: 18px;
   cursor: pointer;
@@ -134,7 +166,7 @@ html {
 }
 
 .btn-group .button:hover {
-  background-color: #3e8e41;
+  background-color: unset;
 }
 .top h1 {
     line-height: 1.6;
@@ -143,6 +175,7 @@ html {
 .tabcontent {
     padding: 5px 15px;
 	height: 95%;
+	color: #d3d3d3;
 }
 h3 {text-align: center;}
 
@@ -189,7 +222,7 @@ h3 {text-align: center;}
     margin-bottom: 15px;
 	cursor: pointer;
 	height: 330px;
-	box-shadow: 5px 5px 10px grey;
+	box-shadow: 1px 1px 2px #191818;
 	position: relative;
 }
 .conetent-li:hover {
@@ -339,13 +372,13 @@ h3 {text-align: center;}
 </div>
 
 <div class="btn-group">
-	<button class="button" onclick="openCity(event, 'thongbao'); menuclick();" id="defaultOpen">Thông Báo</button>
-	<button class="button" onclick="openCity(event, 'online'); menuclick();">Game Online</button>
-	<button class="button" onclick="openCity(event, 'offline'); menuclick();">Game Offline</button>
-	<button class="button" onclick="openCity(event, 'mobile'); menuclick();">Game Mobile</button>
-	<button class="button" onclick="openCity(event, 'phanmem'); menuclick();">Phần Mềm</button>
-	<button class="button" onclick="openCity(event, 'khoacc'); menuclick();">Kho Acc Free<span style="position: absolute; padding: 5px; border-radius: 50%; color: white; background-color: red; font-size: 10px; line-height: 1; top: 5px; right: 5px; opacity: 0.8;">Mới</span></button>
-	<button class="button" onclick="openCity(event, 'dichvu'); menuclick();">Dịch Vụ</button>
+	<button class="button" onclick="openCity(event, 'thongbao'); menuclick();" id="defaultOpen"><i class="fa fa-bell"></i>Thông Báo</button>
+	<button class="button" onclick="openCity(event, 'online'); menuclick();"><i class="fa fa-globe"></i>Game Online</button>
+	<button class="button" onclick="openCity(event, 'offline'); menuclick();"><i class="fa fa-gamepad"></i>Game Offline</button>
+	<button class="button" onclick="openCity(event, 'mobile'); menuclick();"><i class="fa fa-medium"></i>Game Mobile</button>
+	<button class="button" onclick="openCity(event, 'phanmem'); menuclick();"><i class="fa fa-file-powerpoint-o"></i>Phần Mềm</button>
+	<button class="button" onclick="openCity(event, 'khoacc'); menuclick();"><i class="fa fa-id-card-o"></i>Kho Acc Free<span style="display:none; position: absolute; padding: 5px; border-radius: 50%; color: white; background-color: red; font-size: 10px; line-height: 1; top: 5px; right: 5px; opacity: 0.8;">Mới</span></button>
+	<button class="button" onclick="openCity(event, 'dichvu'); menuclick();"><i class="fa fa-coffee"></i>Dịch Vụ</button>
 </div>
 
 
@@ -1225,7 +1258,7 @@ foreach($clickcount as $line){
 </div>
 
 <div id="dichvu" class="tabcontent">
-<style>.acc {position: relative;left: -5px;}.acc td {width: 50%;} table {font-family: arial, sans-serif;   border-collapse: collapse;   width: 80%;   background: #ccc; }  td, th {   border: 1px solid #969494;   text-align: left;   padding: 8px; }  tr:nth-child(even) {   background-color: #dddddd; }</style>
+<style>.acc {position: relative;left: -5px;}.acc td {width: 50%;} table {color: black; font-family: arial, sans-serif;   border-collapse: collapse;   width: 80%;   background: #ccc; }  td, th {   border: 1px solid #969494;   text-align: left;   padding: 8px; }  tr:nth-child(even) {   background-color: #dddddd; }</style>
 <center style="position: relative;top: 30px;">
 <h3>Bảng Giá Dịch Vụ</h3>
 <table>
