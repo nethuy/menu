@@ -172,8 +172,8 @@ html {
     line-height: 1.6;
     text-align: center;
 }
-.tabcontent {
     padding: 5px 15px;
+.tabcontent {
 	height: 95%;
 	color: #d3d3d3;
 }
@@ -490,8 +490,18 @@ foreach($clickcount as $line){
 <!-- end counter -->
 <div id="thongbao" class="tabcontent">
 <div class="slideshow-container">
+
 <div class="mySlides fade">
- <h3>Thông Báo 1 / 3</h3>
+ <h3>Thông Báo 1 / 4</h3>
+<p><a style="color:red;font-size: 20px;font-weight: 600;">Genshin Impact</a></p>
+<iframe id="ytplayer" type="text/html" width="720" height="405"
+src="https://www.youtube.com/embed/uwNXNHazS-I?autoplay=1&controls=0&disablekb=1&enablejsapi=1&start=10&color=white"
+frameborder="0" allowfullscreen>
+<p><a style="color:blueviolet;font-size: 20px;font-weight: 600;" href="https://genshin.mihoyo.com/en" target="_blank">Đăng Ký Tài Khoản</a>
+</div>
+
+<div class="mySlides fade">
+ <h3>Thông Báo 2 / 4</h3>
 <p><a style="color:red;font-size: 20px;font-weight: 600;">Hướng dẫn chơi PUBG Lite PC</a></p>
 
 <h2>1. Click mở game PUBG Lite PC trong menu Game Online.</h2>
@@ -499,16 +509,17 @@ foreach($clickcount as $line){
 <img style="width: auto;height: 360px;" src="wire.png"/>
 <h2>3. Đăng nhập vào game chơi.</h2>
 
-<p><a style="color:blueviolet;font-size: 20px;font-weight: 600;" href="https://accounts.pubg.com/register" target="_blank">Click Vào Đây Đăng  Để Ký Tài Khoản, hoặc vào Kho Acc Free lấy Acc.</a>
+<p><a style="color:blueviolet;font-size: 20px;font-weight: 600;" href="https://accounts.pubg.com/register" target="_blank">Click Vào Đây Để Đăng Ký Tài Khoản, hoặc vào Kho Acc Free lấy Acc.</a>
 
 </div>
+
 <div class="mySlides fade">
- <h3>Thông Báo 2 / 3</h3>
+ <h3>Thông Báo 3 / 4</h3>
   <a href="https://gta5vn.com/dang-ky" target="_blank"><img style="width: auto;height: 500px;" src="image/gta5-qc.png"></a>
 	<p><a style="color:blueviolet;font-size: 20px;font-weight: 600;" href="https://gta5vn.com/dang-ky" target="_blank">Click Vào Đây Đăng Ký Tài Khoản Ngay</a>
 </div>
 <div class="mySlides fade">
-  <h3>Thông Báo 3 / 3</h3>
+  <h3>Thông Báo 4 / 4</h3>
   <h4>Game <a href="https://dotkich.goplay.vn/trang-chu" style="color:red;text-decoration: none;">Đột Kích</a> đã mở lại, người chơi phải tạo tài khoản mới hoặc có thể chuyển tài khoản cũ sang tài khoản mới.</h4>
   <a href="https://dotkich.goplay.vn/trang-chu"><img style="width: auto;height: 400px;" src="image/thongbao-cf.jpg"/></a>
   <br/>
@@ -530,10 +541,30 @@ foreach($clickcount as $line){
 <ul class="content-ul">
 
 <li class="conetent-li" onmouseenter="lihover()" onclick="clickli()">
+<div class="click-count">Lượt chơi: <span id="click-genshin"><?php echo $count['click-genshin'];?></span></div>
+<div onclick="document.getElementById('genshinid').style.display='block'">
+<span class="content-img"><img src="image/genshin.png" /></span>
+<span class="content-name"><a class="content-name-a">Genshin Impact</a><span style="position: absolute; padding: 5px; border-radius: 50%; color: white; background-color: red; font-size: 10px; line-height: 1; bottom: 18px; right: 15px; opacity: 0.8;">Mới</span></span>
+</div>
+<div id="genshinid" class="modal">
+	<span onclick="document.getElementById('genshinid').style.display='none'" class="close" title="Close">×</span>
+    <div id="genshinid"class="container">
+      <div class="clearfix">
+		<a onclick="location.href='webrun:D:/nethuy/Shortcut/genshin.lnk'; clickplay(); document.getElementById('genshinid').style.display='none';">
+			<div class="play-button" data-click-id="click-genshin">
+				Mở Genshin Impact
+			</div>
+		</a>
+      </div>
+    </div>
+</div>
+</li>
+
+<li class="conetent-li" onmouseenter="lihover()" onclick="clickli()">
 <div class="click-count">Lượt chơi: <span id="click-pubglite"><?php echo $count['click-pubglite'];?></span></div>
 <div onclick="document.getElementById('idpubg-lite').style.display='block'">
 <span class="content-img"><img src="image/pubg-lite.jpg" /></span>
-<span class="content-name"><a class="content-name-a">PUBG Lite PC</a><span style="position: absolute; padding: 5px; border-radius: 50%; color: white; background-color: red; font-size: 10px; line-height: 1; bottom: 18px; right: 25px; opacity: 0.8;">Mới</span></span>
+<span class="content-name"><a class="content-name-a">PUBG Lite PC</a></span>
 </div>
 <div id="idpubg-lite" class="modal">
 	<span onclick="document.getElementById('idpubg-lite').style.display='none'" class="close" title="Close">×</span>
