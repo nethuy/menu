@@ -1466,14 +1466,16 @@ document.getElementById("defaultOpen").click();
 
 <!-- Hover Audio -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<audio><source src="audio/menuhover.mp3" /></audio>
+
+<audio id="thongbaoID"><source src="audio/menu/thongbao.mp3" /></audio>
+
 <script>
 function playclip(){
-     var audio = document.getElementsByTagName("audio")[0];
+     var audio = document.getElementById("thongbaoID")[0];
               audio.play();
             }
  $(document).ready(function() {
-        $('.button').on('mouseenter',function(){
+        $('.thongbao-hover').on('mouseenter',function(){
         if(!$(this).hasClass('.played')){
         playclip();
         $(this).addClass('.played');
@@ -1497,6 +1499,33 @@ function playAudio() {
 }
 </script>
 <!-- End Audio Click -->
+
+<audio id="audioID1"><source src="audio/menuclick.mp3" type="audio/mpeg"> </audio>
+<audio id="audioID2"><source src="audio/lihover.mp3" type="audio/mpeg"> </audio>
+<audio id="audioID3"><source src="audio/clickplay.mp3" type="audio/mpeg"> </audio>
+<audio id="audioID4"><source src="audio/clickli.mp3" type="audio/mpeg"> </audio>
+
+<script>
+//Defining variable based on unique ID
+var audio1 = document.getElementById("audioID1");
+var audio2 = document.getElementById("audioID2");
+var audio3 = document.getElementById("audioID3");
+var audio4 = document.getElementById("audioID4");
+//Example of an HTML Audio/Video Method
+function menuclick() {
+  audio1.play();
+}
+function lihover() {
+  audio2.play();
+}
+function clickplay() {
+  audio3.play();
+}
+function clickli() {
+  audio4.play();
+}
+</script>
+
 
 <!-- Slide -->
 <script>
@@ -1526,8 +1555,8 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += "active";
 }
-<!-- End Slide -->
 </script>
+<!-- End Slide -->
 
 <script>
 <!-- Couter -->
@@ -1549,38 +1578,6 @@ for(var i = 0; i < clicks.length; i++){
 <!-- End counter -->
 </script>
 
-<audio id="audioID1">
-  <source src="audio/menuclick.mp3" type="audio/mpeg">
-</audio>
-<audio id="audioID2">
-  <source src="audio/lihover.mp3" type="audio/mpeg">
-</audio>
-<audio id="audioID3">
-  <source src="audio/clickplay.mp3" type="audio/mpeg">
-</audio>
-<audio id="audioID4">
-  <source src="audio/clickli.mp3" type="audio/mpeg">
-</audio>
-<script>
-//Defining variable based on unique ID
-var audio1 = document.getElementById("audioID1");
-var audio2 = document.getElementById("audioID2");
-var audio3 = document.getElementById("audioID3");
-var audio4 = document.getElementById("audioID4");
-//Example of an HTML Audio/Video Method
-function menuclick() {
-  audio1.play();
-}
-function lihover() {
-  audio2.play();
-}
-function clickplay() {
-  audio3.play();
-}
-function clickli() {
-  audio4.play();
-}
-</script>
 <script type='text/javascript' src='phaohoa2.js'></script>
 </body>
 </html>
