@@ -369,41 +369,20 @@ h3 {text-align: center;}
 <!-- left -->
 <div class="left">
 
-<div onmouseover="play(8)" onmouseout="stop(8)" class="logo" >
+<div class="logo" >
 <canvas id="canvas"></canvas>
 </div>
 
 <div class="btn-group">
-	<button class="button" onmouseover="play(1)" onmouseout="stop(1)" onclick="openCity(event, 'thongbao'); menuclick();" id="defaultOpen"><i class="fa fa-bell"></i>Thông Báo</button>
-	<button class="button" onmouseover="play(2)" onmouseout="stop(2)" onclick="openCity(event, 'online'); menuclick();"><i class="fa fa-globe"></i>Game Online</button>
-	<button class="button" onmouseover="play(3)" onmouseout="stop(3)" onclick="openCity(event, 'offline'); menuclick();"><i class="fa fa-gamepad"></i>Game Offline</button>
-	<button class="button" onmouseover="play(4)" onmouseout="stop(4)" onclick="openCity(event, 'mobile'); menuclick();"><i class="fa fa-medium"></i>Game Mobile</button>
-	<button class="button" onmouseover="play(5)" onmouseout="stop(5)" onclick="openCity(event, 'phanmem'); menuclick();"><i class="fa fa-file-powerpoint-o"></i>Phần Mềm</button>
-	<button class="button" onmouseover="play(6)" onmouseout="stop(6)" onclick="openCity(event, 'khoacc'); menuclick();"><i class="fa fa-id-card-o"></i>Kho Acc Free<span style="display:none; position: absolute; padding: 5px; border-radius: 50%; color: white; background-color: red; font-size: 10px; line-height: 1; top: 5px; right: 5px; opacity: 0.8;">Mới</span></button>
-	<button class="button" onmouseover="play(7)" onmouseout="stop(7)" onclick="openCity(event, 'dichvu'); menuclick();"><i class="fa fa-coffee"></i>Dịch Vụ</button>
+	<button class="button" onclick="openCity(event, 'thongbao'); menuclick();" id="defaultOpen"><i class="fa fa-bell"></i>Thông Báo</button>
+	<button class="button" onclick="openCity(event, 'online'); menuclick();"><i class="fa fa-globe"></i>Game Online</button>
+	<button class="button" onclick="openCity(event, 'offline'); menuclick();"><i class="fa fa-gamepad"></i>Game Offline</button>
+	<button class="button" onclick="openCity(event, 'mobile'); menuclick();"><i class="fa fa-medium"></i>Game Mobile</button>
+	<button class="button" onclick="openCity(event, 'phanmem'); menuclick();"><i class="fa fa-file-powerpoint-o"></i>Phần Mềm</button>
+	<button class="button" onclick="openCity(event, 'khoacc'); menuclick();"><i class="fa fa-id-card-o"></i>Kho Acc Free<span style="display:none; position: absolute; padding: 5px; border-radius: 50%; color: white; background-color: red; font-size: 10px; line-height: 1; top: 5px; right: 5px; opacity: 0.8;">Mới</span></button>
+	<button class="button" onclick="openCity(event, 'dichvu'); menuclick();"><i class="fa fa-coffee"></i>Dịch Vụ</button>
 </div>
 
-<!-- Left menu Hover sound -->
-<script>
-    function play(index){
-        var audio = document.getElementById("audio"+index);
-        audio.play();
-    }
-	function stop(index){
-        var audio = document.getElementById("audio"+index);
-        audio.pause();
-		audio.currentTime = 0;
-    }
-</script>
-<audio id="audio1" src="audio/menu/thongbao.mp3"></audio>
-<audio id="audio2" src="audio/menu/gameonline.mp3"></audio>
-<audio id="audio3" src="audio/menu/gameoffline.mp3"></audio>
-<audio id="audio4" src="audio/menu/gamemobile.mp3"></audio>
-<audio id="audio5" src="audio/menu/phanmem.mp3"></audio>
-<audio id="audio6" src="audio/menu/khoaccfree.mp3"></audio>
-<audio id="audio7" src="audio/menu/dichvu.mp3"></audio>
-<audio id="audio8" src="audio/menu/chaomung.mp3"></audio>
-<!-- End Left menu Hover sound -->
 
 <div class="ver-bottom"> 
 <div id="sfcg31h3t258m1j88a7346qlwp6acm7etdr"></div>
@@ -1466,16 +1445,14 @@ document.getElementById("defaultOpen").click();
 
 <!-- Hover Audio -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-<audio id="thongbaoID"><source src="audio/menu/thongbao.mp3" /></audio>
-
+<audio><source src="audio/menuhover.mp3" /></audio>
 <script>
 function playclip(){
-     var audio = document.getElementById("thongbaoID")[0];
+     var audio = document.getElementsByTagName("audio")[0];
               audio.play();
             }
  $(document).ready(function() {
-        $('.thongbao-hover').on('mouseenter',function(){
+        $('.button').on('mouseenter',function(){
         if(!$(this).hasClass('.played')){
         playclip();
         $(this).addClass('.played');
@@ -1499,33 +1476,6 @@ function playAudio() {
 }
 </script>
 <!-- End Audio Click -->
-
-<audio id="audioID1"><source src="audio/menuclick.mp3" type="audio/mpeg"> </audio>
-<audio id="audioID2"><source src="audio/lihover.mp3" type="audio/mpeg"> </audio>
-<audio id="audioID3"><source src="audio/clickplay.mp3" type="audio/mpeg"> </audio>
-<audio id="audioID4"><source src="audio/clickli.mp3" type="audio/mpeg"> </audio>
-
-<script>
-//Defining variable based on unique ID
-var audio1 = document.getElementById("audioID1");
-var audio2 = document.getElementById("audioID2");
-var audio3 = document.getElementById("audioID3");
-var audio4 = document.getElementById("audioID4");
-//Example of an HTML Audio/Video Method
-function menuclick() {
-  audio1.play();
-}
-function lihover() {
-  audio2.play();
-}
-function clickplay() {
-  audio3.play();
-}
-function clickli() {
-  audio4.play();
-}
-</script>
-
 
 <!-- Slide -->
 <script>
@@ -1555,8 +1505,8 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += "active";
 }
-</script>
 <!-- End Slide -->
+</script>
 
 <script>
 <!-- Couter -->
@@ -1578,6 +1528,38 @@ for(var i = 0; i < clicks.length; i++){
 <!-- End counter -->
 </script>
 
+<audio id="audioID1">
+  <source src="audio/menuclick.mp3" type="audio/mpeg">
+</audio>
+<audio id="audioID2">
+  <source src="audio/lihover.mp3" type="audio/mpeg">
+</audio>
+<audio id="audioID3">
+  <source src="audio/clickplay.mp3" type="audio/mpeg">
+</audio>
+<audio id="audioID4">
+  <source src="audio/clickli.mp3" type="audio/mpeg">
+</audio>
+<script>
+//Defining variable based on unique ID
+var audio1 = document.getElementById("audioID1");
+var audio2 = document.getElementById("audioID2");
+var audio3 = document.getElementById("audioID3");
+var audio4 = document.getElementById("audioID4");
+//Example of an HTML Audio/Video Method
+function menuclick() {
+  audio1.play();
+}
+function lihover() {
+  audio2.play();
+}
+function clickplay() {
+  audio3.play();
+}
+function clickli() {
+  audio4.play();
+}
+</script>
 <script type='text/javascript' src='phaohoa2.js'></script>
 </body>
 </html>
